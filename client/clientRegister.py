@@ -1,16 +1,45 @@
 from socket import *
 
-serverName = 'localhost'
 serverPort = 12000
-clientSocket = socket(AF_INET, SOCK_DGRAM)
+serverSocket = socket(AF_INET, SOCK_DGRAM)
+serverSocket.bind(('', serverPort))
 
-playerName     =   input   ('digite seu id: ')
-game            =   input   ('informe o jogo desejado: ')
-playerLevel    =   input   ('informe seu level: ')
-allData = [playerName,game,playerLevel]
+gameMax = False
 
-clientSocket.sendto(allData.encode(),(serverName, serverPort))
-allData, serverAddress = clientSocket.recvfrom(2048)
+#jogos disponiveis
+fifa = []
+valorant = []
+cs = []
 
-print(allData)
-clientSocket.close()
+jogosDisponiveis = [fifa, valorant, cs]
+
+print ('O servidor matchmaking está pronto.')
+
+
+while 1:
+	allData, clientAddress = serverSocket.recvfrom(2048)
+	
+	print("id do player: ", allData[playerName])
+	modifiedId = allData[playerName].lower()
+	print("jogo escolhido: ", allData[game])
+	modifiedGame = allData[game].lower()
+	print("level do jogador: ", allData[playerLevel])
+
+
+	if modifiedGame not in jogosDisponiveis:
+		print ("Jogo Indisponivel")
+
+	# registros
+	else:
+		while gameMax:
+			if modifiedGame == 'fifa':
+				jogosDisponiveis[modifiedGame].append(modifiedId)
+
+			elif modifiedGame == 'valorant':
+				jogosDisponiveis[modifiedGame].append(modifiedId)
+
+			elif modifiedGame == 'cs':
+				jogosDisponiveis[modifiedGame].append(modifiedId)
+
+	print("mensagem que sera enviada: ", modifiedEscolha)
+	serverSocket.sendto(modifiedEscolha, clientAddress)
