@@ -27,7 +27,7 @@ while 1:
 	allData = allData.decode()
 	playerName, game, playerLevel = allData.split(";") #separo os dados do cliente nas variaveis correspondentes
 	#deixo em minusculo para padronizar
-	modifiedId = playerName.lower()
+	modifiedNick = playerName.lower()
 	modifiedGame = game.lower()
 
 	#tento transformar a string de nivel em INT, se n der, acusa o erro.
@@ -64,10 +64,10 @@ while 1:
 	
 #======================================== FIFA ==============================================================#
 	if modifiedGame == "fifa":
-		fifa.append(modifiedId)
+		fifa.append(modifiedNick)
 
 		if len(fifa) >= 2:
-			messageToClient = (	f"Uma nova partida foi criada.\n"
+			messageToClient = (	f"\nUma nova partida foi criada.\n"
 								f"Jogo: FIFA \n"
 								f"ID da partida: {partidaId} \n"
 								f"2 jogadores  foram selecionados")
@@ -75,15 +75,15 @@ while 1:
 			fifa.pop(0)
 			fifa.pop(0)
 		else:
-			messageToClient = ("Voce foi adicionado a fila de espera do fifa.\nAguardando mais jogadores...")
+			messageToClient = (f"\nVoce foi adicionado a fila de espera do fifa.\nAguardando mais jogadores...")
 
 
 #======================================== MINECRAFT ==============================================================#
 	elif modifiedGame == "minecraft":
-		minecraft.append(modifiedId)
+		minecraft.append(modifiedNick)
 
 		if len(minecraft) >= 2:
-			messageToClient = (	f"Uma nova partida foi criada.\n"
+			messageToClient = (	f"\nUma nova partida foi criada.\n"
 								f"Jogo: Minecraft \n"
 								f"ID da partida: {partidaId} \n"
 								f"2 jogadores  foram selecionados")
@@ -91,15 +91,15 @@ while 1:
 			minecraft.pop(0)
 			minecraft.pop(0)
 		else:
-			messageToClient = ("Voce foi adicionado a fila de espera do minecraft.\nAguardando mais jogadores...")
+			messageToClient = (f"\nVoce foi adicionado a fila de espera do minecraft.\nAguardando mais jogadores...")
 
 
 #======================================== Counter Strike ==============================================================#
 	elif modifiedGame == "cs" or modifiedGame == "counter strike" or modifiedGame == "counter-strike":
-		cs.append(modifiedId)
+		cs.append(modifiedNick)
 		
 		if len(cs) >= 4:
-			messageToClient = (	f"Uma nova partida foi criada.\n"
+			messageToClient = (	f"\nUma nova partida foi criada.\n"
 								f"Jogo: Counter-Strike \n"
 								f"ID da partida: {partidaId} \n"
 								f"4 jogadores  foram selecionados.")
@@ -109,15 +109,15 @@ while 1:
 			cs.pop(0)
 			cs.pop(0)
 		else:
-			messageToClient = ("Voce foi adicionado a fila de espera do CS.\nAguardando mais jogadores...")
+			messageToClient = (f"\nVoce foi adicionado a fila de espera do CS.\nAguardando mais jogadores...")
 
 
 #======================================== Valorant ==============================================================#
 	elif modifiedGame == "valorant" or modifiedGame == "vava":
-		valorant.append(modifiedId)
+		valorant.append(modifiedNick)
 		
 		if len(valorant) >= 4:
-			messageToClient = (f"Uma nova partida foi criada.\n"
+			messageToClient = (f"\nUma nova partida foi criada.\n"
 								f"Jogo: Valorant \n"
 								f"ID da partida: {partidaId} \n"
 								f"4 jogadores  foram selecionados.")
@@ -127,15 +127,15 @@ while 1:
 			valorant.pop(0)
 			valorant.pop(0)
 		else:
-			messageToClient = ("Voce foi adicionado a fila de espera do Valorant.\nAguardando mais jogadores...")
+			messageToClient = (f"\nVoce foi adicionado a fila de espera do Valorant.\nAguardando mais jogadores...")
 
 
 #======================================== League of Legends ==============================================================#
 	elif modifiedGame == "lol" or modifiedGame == "league of legends":
-		leagueofLegends.append(modifiedId)
+		leagueofLegends.append(modifiedNick)
 
 		if len(leagueofLegends) >= 5:
-			messageToClient = (f"Uma nova partida foi criada.\n"
+			messageToClient = (f"\nUma nova partida foi criada.\n"
 								f"Jogo: League of Legends \n"
 								f"ID da partida: {partidaId} \n"
 								f"5 jogadores  foram selecionados.")
@@ -146,7 +146,7 @@ while 1:
 			leagueofLegends.pop(0)
 			leagueofLegends.pop(0)
 		else:
-			messageToClient = ("Voce foi adicionado a fila de espera do League of Legends.\nAguardando mais jogadores...")
+			messageToClient = (f"\nVoce foi adicionado a fila de espera do League of Legends.\nAguardando mais jogadores...")
 								
 
 
