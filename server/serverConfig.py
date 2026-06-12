@@ -154,4 +154,4 @@ while 1:
 		print("jogo escolhido: ", game)
 		print("level do jogador:", playerLevel, "\n")
 
-		serverSocket.sendto(messageToClient.encode(), clientAddress)
+	serverSocket.sendto(messageToClient.encode(), clientAddress)
