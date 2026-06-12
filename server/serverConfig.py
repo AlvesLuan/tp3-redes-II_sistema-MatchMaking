@@ -40,7 +40,7 @@ while 1:
 
 	#erro se o id estiver vazio.
 	if playerName.strip() == "":
-		messageToClient = ("Erro: informe um ID válido.")
+		messageToClient = ("Erro: informe um Nickname válido.")
 		serverSocket.sendto(messageToClient.encode(), clientAddress)
 		continue
 
